@@ -1,18 +1,16 @@
 @import url(global.css);
 
 body {
-    padding: 5%;
+    padding: 5vw;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
 }
 
 .login-section {
+    margin-right: 2.5vw;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     width: 400px;
     max-width: 90vw;
 }
@@ -21,7 +19,6 @@ body {
     padding: 25px;
     border-radius: 25px;
     height: 230px;
-    width: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -30,24 +27,33 @@ body {
 }
 
 .login-image {
+    margin-left: 2.5vw;
     padding: 25px;
     border-radius: 25px;
     height: 100vmin;
-    width: auto;
-    max-height: 100%;
+    max-height: 400px;
     max-width: 90vw;
     display: flex;
     justify-content: center;
-    box-sizing: border-box;
     background-color: var(--card-background);
 }
 
 @media only screen and (max-width: 600px) {
+    body {
+        flex-wrap: wrap;
+        align-content: flex-start;
+    }
+
+    .login-section {
+        margin-right: 0;
+    }
+
     .login-form {
         border-radius: 25px 25px 0px 0px;
     }
 
     .login-image {
+        margin-left: 0;
         border-radius: 0px 0px 25px 25px;
     }
 }
