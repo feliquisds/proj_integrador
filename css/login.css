@@ -17,11 +17,6 @@ body {
     max-width: 90vw;
 }
 
-.login-input {
-    display: flex;
-    flex-direction: column;
-}
-
 .login-form {
     padding: 25px;
     border-radius: 25px;
