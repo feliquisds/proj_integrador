@@ -4,12 +4,37 @@
 :root {
     --background: #e8e8f1;
     --card-background: white;
+    --image-card-background: white;
+
+    --common-hover: #435b72;
+    --common-press: #1a3c63;
+
     --link: #2e8447;
+
     --input-unfocused: #a4c2ad;
     --input-focused: #28343a;
-    --button-press: #1c232b;
-    --button-hover: #3a4b5c;
+
+    --button: #28343a;
     --button-text: white;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+    --background: #1c232b;
+    --card-background: #28343a;
+    --image-card-background: #77b689;
+
+    --common-hover: #55a06a;
+    --common-press: #21833d;
+
+    --link: #77b689;
+
+    --input-unfocused: #7a8987;
+    --input-focused: #e7f7ec;
+
+    --button: #92e2a9;
+    --button-text: black;
+    }
 }
 
 * {
