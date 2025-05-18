@@ -55,5 +55,6 @@ body {
     .login-image {
         margin-left: 0;
         border-radius: 0px 0px 25px 25px;
+        background-color: var(--card-background);
     }
 }
