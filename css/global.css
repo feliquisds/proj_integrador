@@ -1,0 +1,31 @@
+@import url(input.css);
+@import url(buttons.css);
+
+:root {
+    --background: #e8e8f1;
+    --card-background: white;
+    --link: #2e8447;
+    --input-unfocused: #a4c2ad;
+    --input-focused: #28343a;
+    --button-press: #1c232b;
+    --button-hover: #3a4b5c;
+    --button-text: white;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: var(--background);
+}
+
+.text {
+    color: var(--input-focused);
+    margin-bottom: 10px;
+}

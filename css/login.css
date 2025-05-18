@@ -1,0 +1,58 @@
+@import url(global.css);
+
+body {
+    padding: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+.login-section {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 400px;
+    max-width: 90vw;
+}
+
+.login-input {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form {
+    padding: 25px;
+    border-radius: 25px;
+    height: 230px;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: content-box;
+    background-color: var(--card-background);
+}
+
+.login-image {
+    padding: 25px;
+    border-radius: 25px;
+    height: 100vmin;
+    width: auto;
+    max-height: 100%;
+    max-width: 90vw;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    background-color: var(--card-background);
+}
+
+@media only screen and (max-width: 600px) {
+    .login-form {
+        border-radius: 25px 25px 0px 0px;
+    }
+
+    .login-image {
+        border-radius: 0px 0px 25px 25px;
+    }
+}
