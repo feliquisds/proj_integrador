@@ -5,6 +5,7 @@ button {
     background-color: var(--button);
     border-color: transparent;
     color: var(--button-text);
+    width: 100%;
 }
 
 .button-with-icon {
