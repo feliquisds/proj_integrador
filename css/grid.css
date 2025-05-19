@@ -1,25 +1,25 @@
-.grid-2x-2-1, .grid-1x, .grid-1x-10px {
+.grid {
     width: 100%;
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 20px;
     justify-items: center;
+}
+
+.grid > * {
+    width: 100%;
 }
 
 .grid-2x-2-1 {
     grid-template-columns: 2fr 1fr;
+    gap: 20px;
 }
 
 .grid-1x, .grid-1x-10px {
     grid-template-columns: 1fr;
+    gap: 20px;
 }
 
 .grid-1x-10px {
     gap: 10px;
-}
-
-.grid-2x-2-1 > *, .grid-1x > *, .grid-1x-10px > * {
-    width: 100%;
 }
 
 .button-grid, .polar-grid {

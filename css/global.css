@@ -73,7 +73,7 @@
 }
 
 body {
-    padding: 3vw;
+    padding: 0;
     display: flex;
     background-color: var(--background);
 }
