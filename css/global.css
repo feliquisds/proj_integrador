@@ -3,6 +3,7 @@
 @import url(cards.css);
 @import url(table.css);
 @import url(grid.css);
+@import url(icons.css);
 
 :root {
     --background: #e8e8f1;

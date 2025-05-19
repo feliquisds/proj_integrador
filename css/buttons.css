@@ -7,12 +7,31 @@ button {
     color: var(--button-text);
 }
 
+.button-with-icon {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
 button:hover {
     background-color: var(--common-hover);
 }
 
 button:focus {
     background-color: var(--common-press);
+}
+
+.secondary-button {
+    background-color: var(--card-background);
+    color: var(--input-focused);
+}
+
+.secondary-button:hover {
+    background-color: var(--background);
+}
+
+.secondary-button:focus {
+    background-color: var(--subcard-hover);
 }
 
 select {
