@@ -2,6 +2,7 @@
     width: 100%;
     display: grid;
     justify-items: center;
+    align-items: start;
 }
 
 .grid > * {
