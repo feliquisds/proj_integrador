@@ -3,6 +3,7 @@
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 20px;
+    justify-items: center;
 }
 
 .grid-2x-2-1 {
@@ -11,6 +12,10 @@
 
 .grid-1x {
     grid-template-columns: 1fr;
+}
+
+.grid-2x-2-1 > *, .grid-1x > * {
+    width: 100%;
 }
 
 .button-grid {
