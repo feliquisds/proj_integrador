@@ -5,12 +5,7 @@ body {
     flex-direction: row;
 }
 
-button {
-    width: 100%;
-    margin-bottom: 10px;
-}
-
-iframe {
+button, iframe {
     width: 100%;
 }
 
@@ -25,10 +20,6 @@ aside {
     align-items: center;
 }
 
-aside > div {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+.grid-1x {
+    gap: 10px;
 }
