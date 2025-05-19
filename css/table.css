@@ -1,0 +1,36 @@
+table {
+    margin-bottom: 20px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 5px;
+    text-align: left;
+    border-bottom: 1px solid var(--subcard-hover);
+}
+
+th {
+    color: var(--link);
+}
+
+.inactive, .idle, .active {
+    padding: 3px 5px;
+    border-radius: 5px;
+}
+
+.inactive {
+    background-color: var(--inactive-background);
+    color: var(--inactive-text);
+}
+
+.idle {
+    background-color: var(--idle-background);
+    color: var(--idle-text);
+}
+
+.active {
+    background-color: var(--active-background);
+    color: var(--active-text);
+}

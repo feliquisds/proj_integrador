@@ -1,0 +1,26 @@
+.grid-2x-2-1 {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    grid-auto-rows: minmax(150px, auto);
+}
+
+.grid-1x {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    grid-auto-rows: minmax(150px, auto);
+}
+
+.button-grid {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: left;
+    column-gap: 20px;
+}
+
+@media (max-width: 900px) {
+    .grid-2x-2-1 {
+        grid-template-columns: 1fr;
+    }
+}

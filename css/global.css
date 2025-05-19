@@ -1,5 +1,8 @@
 @import url(input.css);
 @import url(buttons.css);
+@import url(cards.css);
+@import url(table.css);
+@import url(grid.css);
 
 :root {
     --background: #e8e8f1;
@@ -9,6 +12,8 @@
     --common-hover: #435b72;
     --common-press: #1a3c63;
 
+    --subcard-hover: #d3d3df;
+
     --link: #2e8447;
 
     --input-unfocused: #a4c2ad;
@@ -16,6 +21,16 @@
 
     --button: #28343a;
     --button-text: white;
+
+    --inactive-background: rgb(186, 0, 40);
+    --inactive-text: rgb(255, 228, 228);
+    --idle-background: rgb(209, 143, 0);
+    --idle-text: rgb(255, 247, 229);
+    --active-background: rgb(4, 142, 66);
+    --active-text: rgb(230, 255, 230);
+
+    --shadow1: rgba(14, 63, 126, 0.04);
+    --shadow2: rgba(42, 51, 70, 0.04);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -27,6 +42,8 @@
     --common-hover: #55a06a;
     --common-press: #21833d;
 
+    --subcard-hover: #374e4a;
+
     --link: #77b689;
 
     --input-unfocused: #7a8987;
@@ -34,15 +51,22 @@
 
     --button: #92e2a9;
     --button-text: black;
+
+    --inactive-background: rgb(232, 111, 137);
+    --inactive-text: rgb(75, 20, 20);
+    --idle-background: rgb(241, 221, 112);
+    --idle-text: rgb(75, 58, 20);
+    --active-background: rgb(130, 235, 130);
+    --active-text: rgb(20, 75, 20);
+
+    --shadow1: rgba(11, 141, 85, 0.04);
+    --shadow2: rgba(0, 0, 0, 0.04);
     }
 }
 
 * {
     margin: 0;
     box-sizing: border-box;
-}
-
-html {
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -50,7 +74,7 @@ body {
     background-color: var(--background);
 }
 
-.text {
+h1, h2, h3, h4, h5, h6, p {
     color: var(--input-focused);
     margin-bottom: 10px;
 }

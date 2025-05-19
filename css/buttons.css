@@ -15,6 +15,19 @@ button:focus {
     background-color: var(--common-press);
 }
 
+select {
+    border-radius: 100px;
+    padding: 10px;
+    border-right: 10px solid var(--card-background);
+    outline: 0;
+    background-color: var(--card-background);
+    border-color: transparent;
+    color: var(--input-focused);
+}
+option {
+    color: var(--input-focused);
+}
+
 a {
     margin-bottom: 20px;
     color: var(--link);

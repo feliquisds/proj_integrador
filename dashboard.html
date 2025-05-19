@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        @import url(css/sidebar.css);
+    </style>
+    <script src="js/dashboard.js"></script>
+</head>
+<body>
+    <aside>
+        <div>
+            <div class="logo">
+                <a .logoa href="index.html">
+                    <img src="media/logo.png" alt="Logo da escola" style="width: 120px; height: auto;">
+                </a>
+            </div>
+    
+            <button onclick="jumpSrc('dashboard/relatorios.html')">
+                Relatórios
+            </button>
+    
+            <button onclick="jumpSrc('dashboard/turmas.html')">
+                Minhas turmas
+            </button>
+    
+            <button onclick="jumpSrc('dashboard/atividades.html')">
+                Atividades
+            </button>
+    
+            <button onclick="jumpSrc('dashboard/mensagens.html')">
+                Mensagens
+            </button>
+    
+            <button onclick="jumpSrc('dashboard/agendas.html')">
+                Agendas
+            </button>
+        </div>
+
+        <button onclick="jumpSrc('dashboard/agendas.html')">
+            Configurações
+        </button>
+    </aside>
+
+    <iframe src="dashboard/relatorios.html" frameborder="0" id="frame"></iframe>
+</body>
+</html>

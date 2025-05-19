@@ -15,21 +15,16 @@ body {
     max-width: 90vw;
 }
 
-.login-form {
-    padding: 25px;
-    border-radius: 25px;
+.card {
     height: 230px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     box-sizing: content-box;
-    background-color: var(--card-background);
 }
 
-.login-image {
+.image-card {
     margin-left: 2.5vw;
-    padding: 25px;
-    border-radius: 25px;
     height: 100vmin;
     max-height: 400px;
     max-width: 90vw;
@@ -48,11 +43,11 @@ body {
         margin-right: 0;
     }
 
-    .login-form {
+    .card {
         border-radius: 25px 25px 0px 0px;
     }
 
-    .login-image {
+    .image-card {
         margin-left: 0;
         border-radius: 0px 0px 25px 25px;
         background-color: var(--card-background);

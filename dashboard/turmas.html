@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url(../css/dashboard.css);
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../js/turmas.js"></script>
+</head>
+<body>
+    <h2>Minhas turmas</h2>
+    <div class="header">
+        <select onchange="mudarMateria(this)">
+            <option value="Matemática">Matemática</option>
+            <option value="Português">Português</option>
+            <option value="História">História</option>
+            <option value="Geografia">Geografia</option>
+        </select>
+        <button class="add-btn">Adicionar Aluno</button>
+    </div>
+
+    <div class="grid-1x">
+        <div class="card">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Situação</th>
+                        <th>Frequência</th>
+                        <th>Nota média</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Ana Caroline</td>
+                        <td><span class="idle">Suspenso</span></td>
+                        <td>90%</td>
+                        <td>9,0</td>
+                    </tr>
+                    <tr>
+                        <td>Evelyn Victoria</td>
+                        <td><span class="inactive">Inativo</span></td>
+                        <td>90%</td>
+                        <td>9,0</td>
+                    </tr>
+                    <tr>
+                        <td>Kauê Souza</td>
+                        <td><span class="active">Ativo</span></td>
+                        <td>50%</td>
+                        <td>0,0</td>
+                    </tr>
+                    <tr>
+                        <td>Felix de Souza</td>
+                        <td><span class="active">Ativo</span></td>
+                        <td>200%</td>
+                        <td>11,0</td>
+                    </tr>
+                </tbody>
+            </table>
+        
+            <div class="button-grid">
+                <button>Importar lista</button>
+                <button>Exportar dados</button>
+                <button>Gerar relatório</button>
+            </div>
+        </div>
+        <div class="grid-2x-2-1">
+            <div class="card">
+                <h2>Gráfico da Turma</h2>
+                <canvas id="graficoTurma"></canvas>
+            </div>
+        
+            <div class="card">
+                <h2>Atividades</h2>
+                <div class="subcard">Atividade 01 <span class="inactive">16/05</span></div>
+                <div class="subcard">Avaliação de matemática <span class="active">19/05</span></div>
+                <div class="subcard">Avaliação de geografia <span class="idle">15/06</span></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

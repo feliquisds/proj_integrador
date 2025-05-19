@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="mensagem"></h1>
+ 
+<script>
+    // Defina o nome do aluno aqui
+    const nomeAluno = "João"; // Altere o nome conforme necessário
+ 
+    // Função para obter a saudação
+    function obterSaudacao() {
+        const horaAtual = new Date().getHours();
+        if (horaAtual < 12) {
+            return "Bom dia";
+        } else if (horaAtual < 18) {
+            return "Boa tarde";
+        } else {
+            return "Boa noite";
+        }
+    }
+ 
+    // Função para formatar o horário no formato "09: 05"
+    function formatarHorario(horas, minutos) {
+        // Garantir que as horas e os minutos tenham dois dígitos, caso necessário
+        const horasFormatadas = horas < 10 ? `0${horas}` : horas;
+        const minutosFormatados = minutos < 10 ? `0${minutos}` : minutos;
+        return `${horasFormatadas}: ${minutosFormatados}`;
+    }
+ 
+    // Atualiza a mensagem
+    function atualizarMensagem() {
+        const dataHoraAtual = new Date();
+        const horas = dataHoraAtual.getHours();
+        const minutos = dataHoraAtual.getMinutes();
+        const saudacao = obterSaudacao();
+        const horarioFormatado = formatarHorario(horas, minutos);
+ 
+        // Monta a mensagem completa
+        const mensagem = `${saudacao}, ${nomeAluno}`;
+        // Atualiza o conteúdo da página
+        document.getElementById("mensagem").innerHTML = mensagem;
+    }
+ 
+    // Atualiza a mensagem imediatamente e depois a cada segundo
+    atualizarMensagem();
+    setInterval(atualizarMensagem, 1000);
+</script>
+</body>
+</html>
