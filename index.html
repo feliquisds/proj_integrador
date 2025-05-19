@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <style>
-        @import url(css/login.css);
+        @import url(css/overrides/login.css);
     </style>
 </head>
 <body>
@@ -16,12 +16,14 @@
                 <h4 class="text">Faça login com sua conta</h4>
             </div>
             <div class="card">
-                <div>
+                <div class="grid-1x">
                     <input type="email" name="email" id="email" placeholder="Email" required>
                     <input type="password" name="password" id="password" placeholder="Senha" required>
-                    <a href="">Esqueceu sua senha?</a>
+                    <div class="button-grid">
+                        <a href="">Esqueceu sua senha?</a>
+                    </div>
+                    <button form="login" type="submit">Entrar</button>
                 </div>
-                <button form="login" type="submit">Entrar</button>
             </div>
         </div>
     </form>

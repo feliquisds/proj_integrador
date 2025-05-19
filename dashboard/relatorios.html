@@ -5,31 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Relatórios</title>
     <style>
-        @import url(../css/dashboard.css);
+        @import url(../css/overrides/dashboard.css);
     </style>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="../js/relatorios.js"></script>
 </head>
 <body>
-    <h1 class="header">Bom dia, NOME</h1>
-    <div class="grid-2x-2-1">
-        <div class="card">
-            <h2>Notas</h2>
-            <canvas id="chartNotas"></canvas>
-        </div>
-        <div class="card">
-            <h2>Frequência</h2>
-            <canvas id="chartFrequencia"></canvas>
-        </div>
-        <div class="card">
-            <h2>Maio</h2>
-            <div id="calendar-date">Carregando...</div>
-        </div>
-        <div class="card">
-            <h2>Eventos</h2>
-            <div class="subcard">Passeio ao ar livre</div>
-            <div class="subcard">Tech Rock</div>
-            <div class="subcard">Excursão</div>
+    <div class="grid-1x">
+        <h1>Bom dia, NOME</h1>
+        <div class="grid-2x-2-1">
+            <div class="card">
+                <h2>Notas</h2>
+                <canvas id="chartNotas"></canvas>
+            </div>
+            <div class="card">
+                <h2>Frequência</h2>
+                <canvas id="chartFrequencia"></canvas>
+            </div>
+            <div class="card">
+                <h2>Maio</h2>
+                <div id="calendar-date">Carregando...</div>
+            </div>
+            <div class="card">
+                <h2>Eventos</h2>
+                <div class="grid-1x-10px">
+                    <div class="subcard">Passeio ao ar livre</div>
+                    <div class="subcard">Tech Rock</div>
+                    <div class="subcard">Excursão</div>
+                </div>
+            </div>
         </div>
     </div>
 </body>

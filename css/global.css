@@ -4,6 +4,7 @@
 @import url(table.css);
 @import url(grid.css);
 @import url(icons.css);
+@import url(menus.css);
 
 :root {
     --background: #e8e8f1;
@@ -72,10 +73,16 @@
 }
 
 body {
+    padding: 3vw;
+    display: flex;
     background-color: var(--background);
 }
 
 h1, h2, h3, h4, h5, h6, p {
     color: var(--input-focused);
     margin-bottom: 10px;
+}
+
+iframe {
+    width: 100%;
 }

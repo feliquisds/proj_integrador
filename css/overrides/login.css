@@ -1,8 +1,6 @@
-@import url(global.css);
+@import url(../global.css);
 
 body {
-    padding: 5vw;
-    display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -13,14 +11,6 @@ body {
     height: 100%;
     width: 400px;
     max-width: 90vw;
-}
-
-.card {
-    height: 230px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-sizing: content-box;
 }
 
 .image-card {

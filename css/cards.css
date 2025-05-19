@@ -28,7 +28,6 @@
     background-color: var(--background);
     padding: 12px;
     border-radius: 12px;
-    margin-bottom: 10px;
 }
 
 .subcard:hover {

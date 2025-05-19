@@ -1,0 +1,9 @@
+@import url(../global.css);
+
+body {
+    padding: 0;
+}
+
+.grid-1x {
+    gap: 10px;
+}

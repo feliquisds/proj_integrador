@@ -1,0 +1,6 @@
+@import url(../global.css);
+
+canvas {
+    width: 100% !important;
+    height: 275px !important;
+}

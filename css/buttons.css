@@ -49,7 +49,6 @@ option {
 }
 
 a {
-    margin-bottom: 20px;
     color: var(--link);
     text-decoration: none;
 }
