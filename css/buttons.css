@@ -1,4 +1,4 @@
-button {
+button, .button {
     border-radius: 100px;
     padding: 10px;
     outline: 0;
@@ -10,21 +10,22 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 42px;
 }
 
 .button-left-aligned {
     justify-content: left;
 }
 
-button:hover {
+button:hover, .button:hover {
     background-color: var(--common-hover);
 }
 
-button:focus {
+button:focus, .button:focus {
     background-color: var(--common-press);
 }
 
-button:focus > span {
+button:focus > span, .button:focus > span {
     animation: fill 0.25s;
     font-variation-settings: 'FILL' 1;
 }
@@ -65,12 +66,13 @@ select:hover:not(select:focus) {
 a {
     color: var(--link);
     text-decoration: none;
+    font-size: smaller;
 }
 
-a:hover {
+a:hover:not(.button) {
     color: var(--common-hover);
 }
 
-a:focus {
+a:focus:not(.button) {
     color: var(--common-press);
 }
