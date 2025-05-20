@@ -27,3 +27,12 @@
   -moz-osx-font-smoothing: grayscale;
   font-feature-settings: 'liga';
 }
+
+@keyframes fill {
+    0% {
+      font-variation-settings: "FILL" 0;
+    }
+    100% {
+      font-variation-settings: "FILL" 1;
+    }
+}

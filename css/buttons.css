@@ -6,12 +6,14 @@ button {
     border-color: transparent;
     color: var(--button-text);
     width: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.button-with-icon {
-    display: flex;
+.button-left-aligned {
     justify-content: left;
-    align-items: center;
 }
 
 button:hover {
@@ -20,6 +22,11 @@ button:hover {
 
 button:focus {
     background-color: var(--common-press);
+}
+
+button:focus > span {
+    animation: fill 0.25s;
+    font-variation-settings: 'FILL' 1;
 }
 
 .secondary-button {
@@ -43,9 +50,16 @@ select {
     background-color: var(--card-background);
     border-color: transparent;
     color: var(--input-focused);
+    cursor: pointer;
+    height: 100%;
 }
+
 option {
     color: var(--input-focused);
+}
+
+select:hover:not(select:focus) {
+    background-color: var(--subcard-hover);
 }
 
 a {

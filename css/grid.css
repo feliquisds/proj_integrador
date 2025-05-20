@@ -26,6 +26,7 @@
 .button-grid, .polar-grid {
     display: grid;
     grid-auto-flow: column;
+    align-items: center;
 }
 
 .button-grid {
