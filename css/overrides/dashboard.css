@@ -2,6 +2,7 @@
 
 body {
     padding: 3vw;
+    height: 100vh;
 }
 
 canvas {

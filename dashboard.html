@@ -5,39 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" type="text/css" href="css/global.css">
-    <script src="js/dashboard.js"></script>
 </head>
 <body>
     <aside>
         <div class="grid grid-1x">
             <img src="media/logo.webp" style="width: 120px; height: auto;">
             <div class="grid grid-1x-10px">
-                <button class="secondary-button button-left-aligned" onclick="jumpSrc('dashboard/relatorios.html')">
+                <a href="./dashboard/relatorios.html" target="frame" class="button secondary-button button-left-aligned">
                     <span class="material">dashboard</span>Relatórios
-                </button>
+                </a>
         
-                <button class="secondary-button button-left-aligned" onclick="jumpSrc('dashboard/turmas.html')">
+                <a href="./dashboard/turmas.html" target="frame" class="button secondary-button button-left-aligned" onclick="jumpSrc('dashboard/turmas.html')">
                     <span class="material">school</span>Minhas turmas
-                </button>
+                </a>
         
-                <button class="secondary-button button-left-aligned" onclick="jumpSrc('dashboard/atividades.html')">
+                <a href="./dashboard/atividades.html" target="frame" class="button secondary-button button-left-aligned">
                     <span class="material">assignment</span>Atividades
-                </button>
+                </a>
         
-                <button class="secondary-button button-left-aligned" onclick="jumpSrc('dashboard/mensagens.html')">
+                <a href="./dashboard/mensagens.html" target="frame" class="button secondary-button button-left-aligned">
                     <span class="material">chat_bubble</span>Mensagens
-                </button>
+                </a>
         
-                <button class="secondary-button button-left-aligned" onclick="jumpSrc('dashboard/agendas.html')">
+                <a href="./dashboard/agendas.html" target="frame" class="button secondary-button button-left-aligned">
                     <span class="material">note_stack</span>Agendas
-                </button>
+                </a>
             </div>
         </div>
-        <button onclick="jumpSrc('dashboard/configuracoes.html')">
+        <a href="./dashboard/configuracoes.html" target="frame" class="button">
             <span class="material">settings</span>Configurações
-        </button>
+        </a>
     </aside>
 
-    <iframe src="dashboard/relatorios.html" frameborder="0" id="frame"></iframe>
+    <iframe src="dashboard/relatorios.html" frameborder="0" id="frame" name="frame"></iframe>
 </body>
 </html>
