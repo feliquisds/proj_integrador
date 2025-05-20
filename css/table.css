@@ -1,11 +1,9 @@
 table {
-    margin-bottom: 20px;
     width: 100%;
     border-collapse: collapse;
 }
 
-th,
-td {
+th, td {
     padding: 5px;
     text-align: left;
     border-bottom: 1px solid var(--subcard-hover);
@@ -33,4 +31,10 @@ th {
 .active {
     background-color: var(--active-background);
     color: var(--active-text);
+}
+
+.calendar > table > thead > tr > th, .calendar > table > tbody > tr > td {
+    padding: 10px 5px;
+    text-align: center;
+    border: 0;
 }

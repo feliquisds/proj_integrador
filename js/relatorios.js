@@ -4,7 +4,7 @@ function generateCalendar() {
     const year = now.getFullYear();
     const firstDay = new Date(year, month, 1).getDay();
     const daysInMonth = new Date(year, month + 1, 0).getDate();
-    let calendarHTML = '<table><tr><th>Dom</th><th>Seg</th><th>Ter</th><th>Qua</th><th>Qui</th><th>Sex</th><th>Sáb</th></tr><tr>';
+    let calendarHTML = '<table><thead><tr><th>Dom</th><th>Seg</th><th>Ter</th><th>Qua</th><th>Qui</th><th>Sex</th><th>Sáb</th></thead></tr><tr>';
 
 
     let adjustedFirstDay = firstDay === 0 ? 7 : firstDay;
