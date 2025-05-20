@@ -5,13 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" type="text/css" href="css/global.css">
+    <style>
+        @import url(css/global.css);
+    </style>
 </head>
 <body>
     <div class="top-menu">
-        <input id="menu__toggle" type="checkbox">
-            <label class="menu__btn" for="menu__toggle"><span class="hamburger"></span></label>
+        <input id="top-menu-toggle" class="top-menu-toggle" type="checkbox">
+            <label class="top-menu-button" for="top-menu-toggle"><span class="hamburger"></span></label>
         </input>
-        <div class="menu-overlay">
+        <div class="top-menu-overlay">
             <iframe src="sidebar.html" frameborder="0"></iframe>
         </div>
     </div>

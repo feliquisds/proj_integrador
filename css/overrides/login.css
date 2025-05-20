@@ -24,7 +24,7 @@ body {
     background-color: var(--image-card-background);
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 850px) {
     body {
         flex-wrap: wrap;
         align-content: flex-start;
