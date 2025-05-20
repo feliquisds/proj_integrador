@@ -1,10 +1,101 @@
 aside {
-    padding: 1.5%;
+    padding: 3vh;
     background-color: var(--card-background);
-    width: 250px;
+    width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+}
+
+.sidebar {
+    overflow: hidden;
+    height: 100vh;
+}
+
+.top-menu {
+    display: none;
+}
+
+@media (max-width: 850px) {
+    body {
+        padding: 5vw;
+    }
+
+    .sidebar, .top-menu-toggle {
+        display: none;
+    }
+
+    .top-menu {
+        display: flex;
+    }
+
+    .top-menu-toggle:checked+.top-menu-button>span {
+        transform: rotate(45deg);
+    }
+
+    .top-menu-toggle:checked+.top-menu-button>span::before {
+        top: 0;
+        transform: rotate(0deg);
+    }
+
+    .top-menu-toggle:checked+.top-menu-button>span::after {
+        top: 0;
+        transform: rotate(90deg);
+    }
+
+    .top-menu-toggle:checked~.top-menu-overlay {
+        left: 0 !important;
+    }
+
+    .top-menu-button {
+        position: fixed;
+        top: 20px;
+        left: 3vw;
+        width: 26px;
+        height: 26px;
+        cursor: pointer;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+    }
+
+    .top-menu-button>span,
+    .top-menu-button>span::before,
+    .top-menu-button>span::after {
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: var(--input-focused);
+        transition-duration: .25s;
+    }
+
+    .top-menu-button>span::before {
+        content: '';
+        top: -8px;
+    }
+
+    .top-menu-button>span::after {
+        content: '';
+        top: 8px;
+    }
+
+    .top-menu-overlay {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0 10vw;
+        list-style: none;
+        background-color: var(--card-background);
+        transition-duration: .25s;
+    }
+
+    iframe {
+        padding-top: 65px;
+    }
 }

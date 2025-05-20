@@ -38,7 +38,7 @@
     justify-content: space-between;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 850px) {
     .grid-2x-2-1 {
         grid-template-columns: 1fr;
     }
