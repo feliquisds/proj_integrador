@@ -1,0 +1,9 @@
+@import url(../global.css);
+
+
+
+body {
+    grid-auto-flow: row;
+    align-items: center;
+}
+
