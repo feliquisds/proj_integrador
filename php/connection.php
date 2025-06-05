@@ -1,2 +1,2 @@
 <?php
-    $connection = new PDO('sqlite:../db.sqlite3');
+    $connection = new PDO('sqlite:'.__DIR__.'/../db.sqlite3');
