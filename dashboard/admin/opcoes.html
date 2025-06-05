@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
 
     </style>
 </head>
+
 <body>
     <div class="grid grid-1x">
         <div class="header">
@@ -37,26 +39,27 @@
             </div>
         </div>
 
-            <iframe id="contentFrame" name="contentFrame"></iframe>
-        </div>
+        <iframe id="contentFrame" name="contentFrame"></iframe>
+    </div>
 
     <script>
         function loadIframe(type) {
             const iframe = document.getElementById('contentFrame');
             iframe.style.display = 'block';
-            
-            switch(type) {
+
+            switch (type) {
                 case 'aluno':
-                    iframe.src = 'aluno.html';
+                    iframe.src = 'pagina_alunos.php';
                     break;
                 case 'professor':
-                    iframe.src = 'professor.html';
+                    iframe.src = 'pagina_professores.php';
                     break;
                 case 'turma':
-                    iframe.src = 'turma.html';
+                    iframe.src = 'pagina_turmas.php';
                     break;
             }
         }
     </script>
 </body>
+
 </html>
