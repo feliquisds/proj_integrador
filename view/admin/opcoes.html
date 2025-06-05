@@ -9,7 +9,16 @@
 
 
     <style>
+        .button {
+            padding: 10vh 1vw;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
 
+        .grid {
+            width: 100%;
+        }
     </style>
 </head>
 
@@ -20,19 +29,19 @@
         </div>
 
         <div class="grid button-grid">
-            <div class="card" onclick="loadIframe('aluno')">
+            <div class="button card" onclick="loadIframe('aluno')">
                 <div class=""><span class="material">person</span></div>
                 <h2>Alunos</h2>
                 <p>Gerenciar cadastro e informações dos alunos</p>
             </div>
 
-            <div class="card" onclick="loadIframe('professor')">
+            <div class="button card" onclick="loadIframe('professor')">
                 <div class=""><span class="material">co_present</span></div>
                 <h2>Professores</h2>
                 <p>Gerenciar cadastro e informações dos professores</p>
             </div>
 
-            <div class="card" onclick="loadIframe('turma')">
+            <div class="button card" onclick="loadIframe('turma')">
                 <div class=""><span class="material">groups</span></div>
                 <h2>Turmas</h2>
                 <p>Gerenciar turmas e distribuição de alunos</p>
@@ -60,6 +69,7 @@
             }
         }
     </script>
+
 </body>
 
 </html>

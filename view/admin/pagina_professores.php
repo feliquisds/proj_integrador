@@ -11,31 +11,23 @@
     <title>CRUD Professor</title>
     <link rel="stylesheet" href="../../assets/css/global.css">
 
+    <style>
+        #form-professor{
+            display: none;
+        }
+    </style>
 </head>
+
 
 <body>
     <div class="grid grid-1x">
         <h1 class="page-title">Gerenciamento de Professores</h1>
 
-        <!-- Botão para abrir o formulário
-        <button class="button" onclick="mostrarFormulario()">Novo Professor</button>
-
-        Formulário de cadastro 
-        <div class="card" id="form-professor">
-            <h2>Adicionar Professor</h2>
-            <div class="grid grid-1x-10px">
-                <input type="text" placeholder="Nome do Professor">
-                <input type="email" placeholder="Sobrenome do Professor">
-                <input type="text" placeholder="Email">
-                <input type="text" placeholder="Data de Nascimento">
-                <button class="button">Adicionar</button>
-            </div>
-        </div> -->
-
+        
         <!-- Lista dos Professores -->
         <div class="card table-section">
             <h2>Lista de Professores</h2>
-
+            
             <table>
                 <thead>
                     <tr>
@@ -48,8 +40,8 @@
                     </tr>
                 </thead>
 
-
-
+                
+                
                 <tbody>
                     <?php foreach ($professores as $prof): ?>
                         <tr>
@@ -60,16 +52,30 @@
                             <td><?= htmlspecialchars($prof['CPF']) ?></td>
                             <td><a href="#">Editar</a></td>
                         </tr>
-                    <?php endforeach; ?>
-                </tbody>
-
-            </table>
-
+                        <?php endforeach; ?>
+                    </tbody>
+                    
+                </table>
+                
+            </div>
+            <!-- Botão para abrir o formulário -->
+            <button class="button" onclick="mostrarFormulario()">Novo Professor</button>
+    
+            <!-- Formulário de cadastro  -->
+            <div class="card" id="form-professor">
+                <h2>Adicionar Professor</h2>
+                <div class="grid grid-1x-10px">
+                    <input type="text" placeholder="Nome do Professor">
+                    <input type="email" placeholder="Sobrenome do Professor">
+                    <input type="text" placeholder="Email">
+                    <input type="text" placeholder="Data de Nascimento">
+                    <button class="button">Adicionar</button>
+                </div>
+            </div>
         </div>
-    </div>
 
     <!-- Script para abrir e fechar o formulário -->
-    <!-- <script>
+     <script>
         function mostrarFormulario() {
             const form = document.getElementById('form-professor');
             if (form.style.display === 'none' || form.style.display === '') {
@@ -78,6 +84,6 @@
                 form.style.display = 'none';
             }
         }
-    </script> -->
+    </script> 
 </body>
 </html>
