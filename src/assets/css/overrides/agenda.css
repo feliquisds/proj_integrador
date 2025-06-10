@@ -1,0 +1,36 @@
+.has-event {
+    background-color: var(--link);
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  .has-event:hover {
+    background-color: var(--link);
+  }
+
+  .event-dot {
+    width: 8px;
+    height: 8px;
+    background-color: red;
+    border-radius: 50%;
+    margin: 0 auto 4px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  td, th {
+    border: 1px solid #ccc;
+    text-align: center;
+    padding: 6px;
+    height: 50px;
+    width: 50px;
+  }
+
+  th {
+    background: #f2f2f2;
+  }
