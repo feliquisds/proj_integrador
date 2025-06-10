@@ -1,7 +1,9 @@
 <?php
     require_once "../../controller/ProfessorController.php";
+   include_once "../../routes/routes.php";
     $controller = new ProfessorController();
     $professores = $controller->listar();
+
 ?>
 
 <!DOCTYPE html>

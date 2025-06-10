@@ -1,8 +1,12 @@
 <?php
-    require_once "../../controller/AlunoController.php";
+    require_once "../../controller/aluno/AlunoController.php";
+    // include_once "../../routes/routes.php";
 
     $controller = new AlunoController();
     $alunos = $controller->listar();
+    // $controller->save();
+
+    
 ?>
 
 <!DOCTYPE html>
@@ -11,6 +15,12 @@
     <meta charset="UTF-8">
     <title>CRUD Alunos</title>
     <link rel="stylesheet" href="../../assets/css/global.css">
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
 </head>
 
 <body>
@@ -61,5 +71,31 @@
             </div>
             <button class="button" onclick="mostrarFormulario()">Novo Aluno</button>
         </div>
+
+
+
+
+        
+        <form action="../../controller/aluno/salvar_aluno.php" method="POST">
+            <input type="text" name="matricula" placeholder="Digite a matrícula" required>
+            <input type="text" name="nome" placeholder="Digite o nome" required>
+            <input type="text" name="sobrenome" placeholder="Digite o sobrenome" required>
+            <input type="text" name="cpf" placeholder="Digite o CPF" required>
+            <input type="date" name="data_nascimento" placeholder="Data de nascimento" required>
+            <input type="text" name="contato_responsavel" placeholder="Digite o contato do responsável" required>
+            <input type="text" name="endereco" placeholder="Digite o endereço" required>
+            <input type="email" name="email_responsavel" placeholder="Digite o e-mail do responsável" required>
+            <input type="text" name="tipo_sanguineo" placeholder="Digite o tipo sanguíneo" required>
+            <input type="number" name="id_turma" placeholder="Digite o ID da turma" required>
+            <button type="submit">Salvar</button>
+        </form>
+
+
+
+
+
+
+
+
     </body>
 </html>
