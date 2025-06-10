@@ -1,3 +1,9 @@
+<?php
+    include_once "../routes/routes.php";
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +11,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" type="text/css" href="css/global.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/global.css">
 </head>
 
 <body>
@@ -14,14 +20,14 @@
         <label class="top-menu-button" for="top-menu-toggle"><span class="hamburger"></span></label>
         </input>
         <div class="top-menu-overlay">
-            <iframe src="dashboard/sidebar-prof.html" frameborder="0"></iframe>
+            <iframe src="../view/professor/sidebar-prof.html" frameborder="0"></iframe>
         </div>
     </div>
 
     <div class="sidebar">
-        <iframe src="dashboard/sidebar-admin.html" frameborder="0"></iframe>
+        <iframe src="../view/admin/sidebar-admin.html" frameborder="0"></iframe>
     </div>
-    <iframe src="dashboard/professor/relatorios.html" frameborder="0" name="frame" id="frame"></iframe>
+    <iframe src="../view/professor/relatorios.html" frameborder="0" name="frame" id="frame"></iframe>
 </body>
 
 </html>
