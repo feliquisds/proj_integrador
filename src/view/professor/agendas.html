@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/overrides/dashboard.css">
-    <script src="..\js\agenda.js"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+    <link rel="stylesheet" href="../../assets/css/overrides/agenda.css">
+    
     <title>Agenda de atividades</title>
 </head>
 <body>
@@ -13,11 +12,11 @@
         <h1>Bom dia, NOME</h1>
 
         <div class="button-grid">
-            <button><span class=" material" onclick="toggleForm()">add</span>Novo Evento</button>
+            <button onclick="toggleForm()">+ Novo Evento</button>
         </div>
         
 
-        <div class="add-event-form" id="event-form" style="display: none;">
+        <div class="add-event-form" id="event-form">
             <h3>Adicionar Evento</h3>
             <label>Data: <input type="date" id="event-date"></label>
             <label>Descrição: <input type="text" id="event-desc" placeholder="Ex: Reunião às 10h"></label>
@@ -30,9 +29,9 @@
                 <div class="grid grid-1x-10px card">
                     <div class="grid button-grid">
                         <h2>Calendário</h2>
-                        <h5 id="html"></h5>
+                        <h5 id="detailed-title"></h5>
                     </div>
-                    <div class="calendar" id="calendar-sumary">Carregando...</div>
+                    <div class="calendar" id="calendar-detailed">Carregando...</div>
                 </div>
 
 
@@ -40,9 +39,9 @@
                 <div class="grid grid-1x-10px card">
                     <div class="grid button-grid">
                         <h2>Calendário</h2>
-                        <h5 id="html"></h5>
+                        <h5 id="summary-title"></h5>
                     </div>
-                    <div class="calendar" id="calendar-detailed">Carregando...</div>
+                    <div class="calendar" id="calendar-summary">Carregando...</div>
                 </div>
 
                 
@@ -58,7 +57,6 @@
         </div>
 
     </div>
-        
-    <script src="calendar.js"></script>
+    <script src="../../assets/js/agenda.js"></script>
 </body>
 </html>

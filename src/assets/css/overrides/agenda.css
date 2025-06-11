@@ -1,36 +1,21 @@
-.has-event {
-    background-color: var(--link);
-    border-radius: 6px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
+@import url(../global.css);
 
-  .has-event:hover {
-    background-color: var(--link);
-  }
-
-  .event-dot {
-    width: 8px;
-    height: 8px;
-    background-color: red;
-    border-radius: 50%;
-    margin: 0 auto 4px;
-  }
-
-  table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-
-  td, th {
-    border: 1px solid #ccc;
+#event-form{
+    display: none;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    
+}
+h3{
     text-align: center;
-    padding: 6px;
-    height: 50px;
-    width: 50px;
-  }
-
-  th {
-    background: #f2f2f2;
-  }
+}
+input, label, button{
+    margin-top: 0.3rem;
+}
+input, label{
+    display:block;
+    width: 100%;
+    font-size: 14px;
+    color: var(--input-focused);
+}
