@@ -1,6 +1,6 @@
 <?php
-    require_once "../../controller/ProfessorController.php";
-   include_once "../../routes/routes.php";
+    require_once "../../src/assets/controller/ProfessorController.php";
+   include_once "../../src/assets/routes/routes.php";
     $controller = new ProfessorController();
     $professores = $controller->listar();
 
@@ -11,7 +11,7 @@
 <head>
     <meta charset="UTF-8">
     <title>CRUD Professor</title>
-    <link rel="stylesheet" href="../../assets/css/global.css">
+    <link rel="stylesheet" href="../../src/assets/css/global.css">
 
     <style>
         #form-professor{

@@ -20,7 +20,7 @@
                                      "senha" => $info['Senha'],
                                      "tipo" => $info['Tipo'],
                                      "id_prof" => $info['ID_Professor']);
-        header("Location: ../view/dashboard.html");
+        header("Location: ../../public/dashboard.html");
     }
     else
     {

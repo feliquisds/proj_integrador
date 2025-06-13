@@ -1,5 +1,5 @@
 <?php
-    require_once "../../controller/aluno/AlunoController.php";
+    require_once "../../src/assets/controller/aluno/AlunoController.php";
     // include_once "../../routes/routes.php";
 
     $controller = new AlunoController();
@@ -14,7 +14,7 @@
 <head>
     <meta charset="UTF-8">
     <title>CRUD Alunos</title>
-    <link rel="stylesheet" href="../../assets/css/global.css">
+    <link rel="stylesheet" href="../../src/assets/css/global.css">
     <style>
         body{
             display: flex;
@@ -76,7 +76,7 @@
 
 
         
-        <form action="../../controller/aluno/salvar_aluno.php" method="POST">
+        <form action="../../src/assets/controller/aluno/salvar_aluno.php" method="POST">
             <input type="text" name="matricula" placeholder="Digite a matrícula" required>
             <input type="text" name="nome" placeholder="Digite o nome" required>
             <input type="text" name="sobrenome" placeholder="Digite o sobrenome" required>
