@@ -1,17 +1,16 @@
 <?php
+    namespace src\controller\turma;
+    use src\model\repository\turmaRepository;
 
-include_once(__DIR__ . '/../model/Turma.php');
+    class turmaController {
+        private $turmaRepo;
 
+        public function __construct() {
+            $this->turmaRepo = new turmaRepository();
+        }
 
-class TurmaController {
-    private $turmaModel;
-
-    public function __construct() {
-        $this->turmaModel = new Turma();
+        public function listar() {
+            return $this->turmaRepo->listarTurmas();
+        }
     }
-
-    public function listar() {
-        return $this->turmaModel->listarTurmas();
-    }
-}
 ?>

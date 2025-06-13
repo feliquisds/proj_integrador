@@ -1,25 +1,23 @@
 <?php
-    require_once "../../controller/TurmaController.php";
-    $controller = new TurmaController();
+    require_once '../../vendor/autoload.php';
+    use src\controller\turma\turmaController;
+    $controller = new turmaController();
     $turmas = $controller->listar();
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <title>CRUD Turmas</title>
-    <link rel="stylesheet" href="../../assets/css/global.css">
-
+    <link rel="stylesheet" href="../assets/css/global.css">
 </head>
 
 <body>
     <div class="grid grid-1x">
         <h1 class="page-title">Gerenciamento de Turmas</h1>
-
-
         <div class="card table-section">
             <h2>Lista de Turmas</h2>
-
             <table>
                 <thead>
                     <tr>
@@ -30,8 +28,6 @@
                         <th>Ações</th>
                     </tr>
                 </thead>
-
-
                 <tbody>
                     <?php foreach ($turmas as $turma): ?>
                         <tr>
@@ -43,12 +39,8 @@
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
-
             </table>
-
         </div>
     </div>
-
-
 </body>
 </html>

@@ -1,5 +1,11 @@
 <?php
-    require_once "connection.php";
+    namespace src\config;
+    require_once '../../vendor/autoload.php';
+    use src\config\connection;
+    use PDO;
+    
+    $db = new connection();
+    $connection = $db->getConnection();
     session_start();
 
     $email = trim($_POST['email']);
@@ -20,9 +26,10 @@
                                      "senha" => $info['Senha'],
                                      "tipo" => $info['Tipo'],
                                      "id_prof" => $info['ID_Professor']);
-        header("Location: ../../public/dashboard.html");
+        header("Location: ../../public/general/dashboard.html");
     }
     else
     {
-        header("Location: ../../index.html");
+        header("Location: ../../public/index.html");
     }
+?>

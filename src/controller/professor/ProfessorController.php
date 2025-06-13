@@ -1,17 +1,16 @@
 <?php
+    namespace src\controller\professor;
+    use src\model\repository\professorRepository;
 
-include_once(__DIR__ . '/../model/Professor.php');
+    class professorController {
+        private $professorRepo;
 
+        public function __construct() {
+            $this->professorRepo = new professorRepository();
+        }
 
-class ProfessorController {
-    private $professorModel;
-
-    public function __construct() {
-        $this->professorModel = new Professor();
+        public function listar() {
+            return $this->professorRepo->listarProfessor();
+        }
     }
-
-    public function listar() {
-        return $this->professorModel->listarProfessor();
-    }
-}
 ?>
