@@ -4,6 +4,10 @@
     $controller = new alunoController();
     $alunos = $controller->listar();
     $path = '..\..\\'.get_class($controller).'.php';
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $controller->save();
+    }
 ?>
 
 <!DOCTYPE html>
@@ -49,7 +53,7 @@
         <button class="button" onclick="mostrarFormulario()">Novo Aluno</button>
     </div>
 
-    <form action="<?php echo $path ?>" method="POST" id="matricula" name="matricula">
+    <form action="" method="POST">
         <input type="text" name="matricula" placeholder="Digite a matrícula" required>
         <input type="text" name="nome" placeholder="Digite o nome" required>
         <input type="text" name="sobrenome" placeholder="Digite o sobrenome" required>

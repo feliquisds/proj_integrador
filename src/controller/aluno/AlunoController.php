@@ -33,8 +33,8 @@
                     $aluno->setTipoSanguineo($_POST['tipo_sanguineo']);
                     $aluno->setIdTurma($_POST['id_turma']);
         
-                    return $this->alunoRepo->save($aluno);
-
+                    $this->alunoRepo->save($aluno);
+                    
                     header("Location: proj_integrador/src/view/dashboard.php");
                 } else {
                     echo "Nenhum dado recebido do formulário.";
