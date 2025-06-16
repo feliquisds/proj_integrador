@@ -3,6 +3,7 @@
     use src\controller\aluno\alunoController;
     $controller = new alunoController();
     $alunos = $controller->listar();
+    $path = '..\..\\'.get_class($controller).'.php';
 ?>
 
 <!DOCTYPE html>
@@ -48,7 +49,7 @@
         <button class="button" onclick="mostrarFormulario()">Novo Aluno</button>
     </div>
 
-    <form action="../../src/assets/controller/aluno/salvar_aluno.php" method="POST">
+    <form action="<?php echo $path ?>" method="POST" id="matricula" name="matricula">
         <input type="text" name="matricula" placeholder="Digite a matrícula" required>
         <input type="text" name="nome" placeholder="Digite o nome" required>
         <input type="text" name="sobrenome" placeholder="Digite o sobrenome" required>
