@@ -6,14 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" type="text/css" href="assets/css/overrides/login.css">
-
+    <script src="assets/js/config.js"></script>
 </head>
 
 <body>
     <form action="../src/config/login.php" method="post" id="login" name="login">
         <div class="grid grid-1x-10px login-section">
-            <h1 class="text">Bem-vindo</h1>
-            <h4 class="text">Faça login com sua conta</h4>
+            <div class="grid polar-grid">
+                <div class="grid grid-1x-10px">
+                    <h1 class="text">Bem-vindo</h1>
+                    <h4 class="text">Faça login com sua conta</h4>
+                </div>
+                <div>
+                    <select onchange="changeTheme()" id="theme">
+                        <option value="auto">Automático</option>
+                        <option value="light">Claro</option>
+                        <option value="dark">Escuro</option>
+                    </select>
+                </div>
+            </div>
             <div class="card">
                 <div class="grid grid-1x">
                     <input type="email" name="email" id="email" placeholder="Email" required>
