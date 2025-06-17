@@ -19,3 +19,40 @@ input, label{
     font-size: 14px;
     color: var(--input-focused);
 }
+
+body {
+      background-color: #1e2e33;
+      color: white;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    th, td {
+      border: 1px solid #444;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .has-event {
+      background-color: #2e8b57;
+      cursor: pointer;
+      border-radius: 2.5rem;
+    }
+
+    .event-dot {
+      width: 2rem;
+      height: 2rem;
+      background-color: red;
+      border-radius: 50%;
+      margin: auto;
+    }
+
+    #event-form {
+      margin-top: 20px;
+    }
