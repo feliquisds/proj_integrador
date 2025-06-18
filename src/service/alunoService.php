@@ -1,6 +1,6 @@
 <?php
     namespace src\service;
-    use src\model\entity\aluno;
+    use src\model\entity\Aluno;
     use src\model\repository\alunoRepository;
     
     class alunoService {

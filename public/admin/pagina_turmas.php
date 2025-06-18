@@ -1,8 +1,15 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
     require_once '../../vendor/autoload.php';
     use src\controller\turmaController;
     $controller = new turmaController();
     $turmas = json_decode($controller->list(), true);
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $controller->save();
+    }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -12,8 +19,31 @@
     <link rel="stylesheet" href="../assets/css/global.css">
 </head>
 <body>
+
+
     <div class="card table-section grid grid-1x">
-        <h2>Lista de turmas</h2>
+
+
+
+        <div class="grid polar-grid">
+            <h2>Lista de Turmas</h2>
+            <button class="button" onclick="showForm()" id="formbutton">Nova Turma</button>
+        </div>
+
+        <form action="" method="POST" class="subcard grid grid-1x" id="new" style="display: none;">
+            <div class="grid button-grid">
+                <input type="number" name="num_turma" placeholder="Número da Turma" required>
+                <input type="text" name="letra_turma" placeholder="Letra da Turma" required>
+                <input type="number" name="ano_letivo" placeholder="Ano Letivo" required>
+            </div>
+            <div class="grid polar-grid">
+                <button type="submit">Salvar</button>
+            </div>
+        </form>
+
+
+
+
         <table>
             <thead>
                 <tr>
@@ -37,5 +67,18 @@
             </tbody>
         </table>
     </div>
+        <script>
+        function showForm() {
+            const form = document.getElementById('new');
+            if (form.style.display === 'none' || form.style.display === '') {
+                form.style.display = 'grid';
+            } else {
+                form.style.display = 'none';
+            }
+        }
+    </script>
+
+
+
 </body>
 </html>

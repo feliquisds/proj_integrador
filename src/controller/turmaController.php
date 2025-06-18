@@ -12,5 +12,11 @@
         public function list() {
             return json_encode($this->service->list());
         }
+
+        public function save() {
+            return json_encode($this->service->save($_POST), true);
+        }
+
+
     }
 ?>

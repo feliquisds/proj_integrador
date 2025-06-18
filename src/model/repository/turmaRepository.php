@@ -1,7 +1,7 @@
 <?php
     namespace src\model\repository;
     use src\config\connection;
-    use src\models\entity\turma;
+    use src\model\entity\turma;
     use PDO;
 
     class turmaRepository {
@@ -18,5 +18,33 @@
             $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
+
+
+        public function save(turma $turma) {
+            $query = "INSERT INTO Turmas (
+                NumTurma,
+                LetraTurma,
+                AnoLetivo
+            ) VALUES (
+                :num_turma,
+                :letra_turma,
+                :ano_letivo
+            )";
+
+            $stmt = $this->conn->prepare($query);
+
+            $numTurma = $turma->getNumTurma();
+            $letraTurma = $turma->getLetraTurma();
+            $anoLetivo = $turma->getAnoLetivo();
+
+            $stmt->bindParam(":num_turma", $numTurma);
+            $stmt->bindParam(":letra_turma", $letraTurma);
+            $stmt->bindParam(":ano_letivo", $anoLetivo);
+
+            $stmt->execute();
+        }
+
+
+
     }
 ?>

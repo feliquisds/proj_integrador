@@ -18,11 +18,19 @@
     </style>
 </head>
 <body>
+
+
+
+
     <div class="card table-section grid grid-1x">
+        
         <div class="grid polar-grid">
             <h2>Lista de alunos</h2>
             <button class="button" onclick="showForm()" id="formbutton">Novo aluno</button>
         </div>
+
+
+
         <form action="" method="POST" class="subcard grid grid-1x" id="new" style="display: none;">
             <div class="grid button-grid">
                 <input type="text" name="matricula" placeholder="Digite a matrícula" required>
@@ -44,6 +52,10 @@
                 <button type="submit">Salvar</button>
             </div>
         </form>
+
+
+
+
         <table>
             <thead>
                 <tr>
