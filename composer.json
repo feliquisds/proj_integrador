@@ -1,0 +1,9 @@
+{
+    "name": "felix/proj_integrador",
+    "autoload": {
+        "psr-4": {
+            "src\\": ["src/", "public/"]
+        }
+    },
+    "require": {}
+}
