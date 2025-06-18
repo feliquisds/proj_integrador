@@ -12,14 +12,11 @@
             $this->conn = $this->conn->getConnection();
         }
 
-        public function listarProfessor() {
+        public function list() {
             $sql = "SELECT * FROM Professores";
             $stmt = $this->conn->prepare($sql);
             $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
-
-        // Aqui podem ser adicionados métodos como:
-        // adicionarAluno(), atualizarAluno(), deletarAluno()...
     }
 ?>
