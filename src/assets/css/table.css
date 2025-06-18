@@ -34,7 +34,6 @@ th {
 }
 
 .calendar > table > thead > tr > th, .calendar > table > tbody > tr > td {
-    padding: 10px 5px;
     text-align: center;
     border: 0;
 }
