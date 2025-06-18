@@ -21,38 +21,71 @@ input, label{
 }
 
 body {
-      background-color: #1e2e33;
-      color: white;
-      font-family: Arial, sans-serif;
-      padding: 20px;
-    }
+  background-color: #1e2e33;
+  color: white;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 10px;
-    }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
 
-    th, td {
-      border: 1px solid #444;
-      padding: 10px;
-      text-align: center;
-    }
+th, td {
+  border: 1px solid #444;
+  padding: 10px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
 
-    .has-event {
-      background-color: #2e8b57;
-      cursor: pointer;
-      border-radius: 2.5rem;
-    }
+.has-event {
+  background-color: #2e8b57;
+  cursor: pointer;
+  border-radius: 50%;
+}
 
-    .event-dot {
-      width: 2rem;
-      height: 2rem;
-      background-color: red;
-      border-radius: 50%;
-      margin: auto;
-    }
+.event-dot {
+  width: 2rem;
+  height: 2rem;
+  background-color: rgba(255, 0, 0, 0.152);
+  position: absolute;
+  border-radius: 50%;
+  margin: auto;
+  z-index: 1;
+}
 
-    #event-form {
-      margin-top: 20px;
-    }
+#event-form {
+  margin-top: 20px;
+}
+    
+select {
+  background-color: transparent;
+  padding: 10px 40px 10px 10px; /* padding right extra para a seta */
+  border-radius: 100px;
+  border: 3px solid var(--input-unfocused);
+  color: var(--input-focused);
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%234CAF50" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 20px;
+  cursor: pointer;
+  width: 100%;
+}
+select:hover {
+  background-color: var(--common-hover);
+}
+select:focus {
+  background-color: transparent;
+  border: 3px solid var(--input-focused);
+}
+
+ select option:first-child {
+      color: var(--button);
+ }

@@ -56,7 +56,7 @@
         const hasEvent = events[dateKey];
 
         if(type === 'detailed') {
-          html += `<td onclick="showEvent('${dateKey}')" class="${hasEvent ? 'has-event' : ''}">${day}</td>`;
+          html += `<td onclick="showEvent('${dateKey}')" class="${hasEvent ? 'has-event' : ''}">${day}"</td>`;
         } else if(type === 'summary') {
           html += `<td>
             ${hasEvent ? `<div class="event-dot" title="${events[dateKey]}"></div>` : '<div style="height: 8px;"></div>'}
