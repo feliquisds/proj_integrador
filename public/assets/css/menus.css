@@ -95,7 +95,7 @@ aside {
         transition-duration: .25s;
     }
 
-    iframe {
+    iframe #frame {
         padding-top: 65px;
     }
 }
