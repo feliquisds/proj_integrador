@@ -1,9 +1,12 @@
-// Cole aqui todo o seu código JavaScript já corrigido
-    const events = {
-      '2025-06-05': 'Reunião importante',
-      '2025-06-12': 'Entrega de projeto',
-      '2025-06-25': 'Apresentação final'
-    };
+
+   const events = {
+  '2025-06-25': {
+    tipo: 'Apresentação final'
+  },
+  '2025-06-30': {
+    tipo: 'Avaliação/atividade'
+  }
+};
 
     function toggleForm() {
       const form = document.getElementById('event-form');
@@ -82,3 +85,62 @@
     const today = new Date();
     generateCalendar('calendar-summary', today.getFullYear(), today.getMonth(), 'summary', 'summary-title');
     generateCalendar('calendar-detailed', today.getFullYear(), today.getMonth(),  'detailed', 'detailed-title');
+
+    const select = document.getElementById('tipo-evento');
+
+
+select.addEventListener('change', function () {
+  // Remove qualquer cor anterior
+  select.classList.remove('calendar', 'avaliacao', 'evento');
+
+  // Adiciona classe conforme valor selecionado
+  if (this.value === 'calendar') {
+    select.classList.add('calendar');
+  } else if (this.value === 'avaliacao') {
+    select.classList.add('avaliacao');
+  } else if (this.value === 'evento') {
+    select.classList.add('evento');
+  }
+});
+
+
+// para calendário detalhado
+
+
+function showEvent(dateKey) {
+  const event = events[dateKey];
+  const container = document.getElementById('event-info');
+
+  if (!event) {
+    container.innerHTML = `<strong>Nenhum evento para essa data.</strong>`;
+  } else {
+    const hoje = new Date();
+    const dataEvento = new Date(dateKey);
+    
+    // Cálculo da diferença
+    const diffTime = dataEvento - hoje;
+    const diffDias = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+    let proximidade = '';
+    if (diffDias === 0) {
+      proximidade = '⚠️ É hoje!';
+    } else if (diffDias === 1) {
+      proximidade = '⏳ Faltam 1 dia';
+    } else if (diffDias > 1 && diffDias <= 7) {
+      proximidade = `⏳ Faltam ${diffDias} dias`;
+    } else if (diffDias > 7) {
+      proximidade = `📅 Ainda faltam ${diffDias} dias`;
+    } else {
+      proximidade = '✅ Evento já passou';
+    }
+
+    container.innerHTML = `
+      <h3>📌 Detalhes do Evento</h3>
+      <p><strong>Tipo:</strong> ${event.tipo}</p>
+      <p><strong>Data:</strong> ${new Date(dateKey).toLocaleDateString()}</p>
+      <p><strong>Status:</strong> ${proximidade}</p>
+    `;
+  }
+
+  container.style.display = 'block';
+}

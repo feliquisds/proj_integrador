@@ -21,8 +21,6 @@ input, label{
 }
 
 body {
-  background-color: #1e2e33;
-  color: white;
   font-family: Arial, sans-serif;
   padding: 20px;
 }
@@ -90,3 +88,21 @@ select:focus {
  select option:first-child {
       color: var(--button);
  }
+ .calendar {
+  color: #f32195; /* azul */
+}
+.avaliacao {
+  color: #FF9800; /* laranja */
+}
+.evento {
+  color: #7d4caf; /* verde */
+}
+
+#event-info {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: var(--background);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  font-family: Arial, sans-serif;
+}
