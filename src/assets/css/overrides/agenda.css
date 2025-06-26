@@ -3,9 +3,7 @@
 #event-form{
     display: none;
     padding: 1rem;
-    display: flex;
     flex-direction: column;
-    
 }
 h3{
     text-align: center;
