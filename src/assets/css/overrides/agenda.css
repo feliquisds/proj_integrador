@@ -3,7 +3,6 @@
 #event-form{
     display: none;
     padding: 1rem;
-    display: flex;
     flex-direction: column;
     
 }
@@ -88,15 +87,6 @@ select:focus {
  select option:first-child {
       color: var(--button);
  }
- .calendar {
-  color: #f32195; /* azul */
-}
-.avaliacao {
-  color: #FF9800; /* laranja */
-}
-.evento {
-  color: #7d4caf; /* verde */
-}
 
 #event-info {
   margin-top: 20px;
@@ -105,4 +95,36 @@ select:focus {
   border-radius: 10px;
   transition: all 0.3s ease;
   font-family: Arial, sans-serif;
+}
+
+button {
+    border-radius: 100px;
+    padding: 10px;
+    outline: 0;
+    background-color: none;
+    border-color: transparent;
+    color: var(--button-text);
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 42px;
+}
+.next-button{
+  justify-content: right;
+}
+
+
+button:hover, .button:hover {
+    background-color: var(--common-hover);
+}
+
+button:focus, .button:focus {
+    background-color: var(--common-press);
+}
+
+button:focus > span, .button:focus > span {
+    animation: fill 0.25s;
+    font-variation-settings: 'FILL' 1;
 }

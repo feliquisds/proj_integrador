@@ -114,12 +114,34 @@ const today = new Date();
 generateCalendar('calendar-summary', today.getFullYear(), today.getMonth(), 'summary', 'summary-title');
 generateCalendar('calendar-detailed', today.getFullYear(), today.getMonth(), 'detailed', 'detailed-title');
 
+
+//atualiza os outros calendários
+let currentYear = today.getFullYear();
+let currentMonth = today.getMonth();
+
+function changeMonth(delta) {
+  currentMonth += delta;
+
+  // Corrige quando passar de Dezembro ou Janeiro
+  if (currentMonth < 0) {
+    currentMonth = 11;
+    currentYear--;
+  } else if (currentMonth > 11) {
+    currentMonth = 0;
+    currentYear++;
+  }
+
+  generateCalendar('calendar-summary', currentYear, currentMonth, 'summary', 'summary-title');
+  generateCalendar('calendar-detailed', currentYear, currentMonth, 'detailed', 'detailed-title');
+}
+
+
 // Estiliza <select> dinamicamente
 const select = document.getElementById('tipo-evento');
 select.addEventListener('change', function () {
   select.classList.remove('calendar', 'avaliacao', 'evento');
 
-  if (this.value === 'calendar') {
+  if (this.value === 'calendario-letivo') {
     select.classList.add('calendar');
   } else if (this.value === 'avaliacao') {
     select.classList.add('avaliacao');
