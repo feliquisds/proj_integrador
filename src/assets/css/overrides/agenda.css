@@ -95,35 +95,63 @@ select:focus {
   transition: all 0.3s ease;
   font-family: Arial, sans-serif;
 }
+.select-option{
+  background-color: var(--background) ;
+}
+.previous-button{
+  background: none;
+  color: var(--button);
+  width: 0.3rem;
+}
+.previous-button:hover {
+    background: none;
+    color: #2e8b57;
+}
 
-button {
-    border-radius: 100px;
-    padding: 10px;
-    outline: 0;
-    background-color: none;
-    border-color: transparent;
-    color: var(--button-text);
-    width: 100%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 42px;
+.previous-button:focus {
+    background: none;
 }
 .next-button{
-  justify-content: right;
+  transform: scaleX(-1);
+  background: none;
+  color: var(--button);
+}
+.next-button:hover {
+    background: none;
+    color: #2e8b57;
 }
 
-
-button:hover, .button:hover {
-    background-color: var(--common-hover);
-}
-
-button:focus, .button:focus {
-    background-color: var(--common-press);
+.next-button:focus {
+    background: none;
 }
 
 button:focus > span, .button:focus > span {
     animation: fill 0.25s;
     font-variation-settings: 'FILL' 1;
+}
+
+#check{
+  font-size: 1.2rem;
+  vertical-align: middle;
+  color: var(--active-background);
+}
+
+.text{
+  margin-bottom: 0.2rem;
+  font-weight: 100;
+}
+strong.title-info{
+  font-weight: 700;
+  letter-spacing: 0.05rem;
+}
+
+.has-event.calendar-letivo{
+   background-color: #F61161;
+   color: var(--button-text);
+}
+.has-event.avaliacao-test{
+  background-color: #CC11F6;
+}
+.has-event.evento-escolar{
+  background-color: #F67411;
 }

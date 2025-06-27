@@ -22,9 +22,9 @@
             <label for="type">Tipo de evento:</label>
             <select name="Tipo-evento" id="tipo-evento">
                 <option value="" disabled selected hidden>Selecione</option>
-                <option class="has-event CL"value="calendar">Calendário letivo</option>
-                <option class="has-event teste"value="avaliacao">Avaliação/atividade</option>
-                <option class="has-event ES"value="evento">Evento escolar</option>
+                <option  value="has-event calendar-letivo">Calendário letivo</option>
+                <option  value="avaliacao-test">Avaliação/atividade</option>
+                <option  value="evento-escolar">Evento escolar</option>
             </select>
             <label>Descrição: <input type="text" class="event-desc" id="event-desc" placeholder="Ex: Reunião às 10h"></label>
             <button onclick="addEvent()">Adicionar</button>
@@ -35,10 +35,10 @@
 
                 <div class="grid grid-1x-10px card">
                     <div class="grid button-grid">
-                        <button class="previous-button"onclick="changeMonth(-1)">&#8592;</button>
+                        <button class="previous-button"onclick="changeMonth(-1)"><span class="material">arrow_back_ios</span></button>
                         <h2>Calendário</h2>
                         <h5 id="detailed-title"></h5>   
-                        <button class="next-button" onclick="changeMonth(1)">&#8594;</button>
+                        <button class="next-button" onclick="changeMonth(1)"><span class="material">arrow_back_ios</span></button>
                     </div>
                     <div class="calendar" id="calendar-detailed">Carregando...</div>
                     <div id="event-info" style="display: none;"></div>

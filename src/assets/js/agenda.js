@@ -11,13 +11,18 @@ function toggleForm() {
 function addEvent() {
   const dateInput = document.getElementById('event-date').value;
   const descInput = document.getElementById('event-desc').value;
+  const tipoSelect = document.getElementById('tipo-evento').value;
 
-  if (!dateInput || !descInput) {
-    alert("Preencha a data e a descrição.");
+
+  if (!dateInput || !descInput || !tipoSelect) {
+    alert("Preencha a data, tipo e descrição.");
     return;
   }
 
-  events[dateInput] = { tipo: descInput };
+  events[dateInput] = {
+    tipo: tipoSelect,         
+    descricao: descInput      
+  };
 
   const date = new Date(dateInput);
   const year = date.getFullYear();
@@ -28,6 +33,7 @@ function addEvent() {
 
   document.getElementById('event-date').value = '';
   document.getElementById('event-desc').value = '';
+  document.getElementById('tipo-evento').value = '';
   document.getElementById('event-form').style.display = 'none';
 }
 
@@ -54,6 +60,10 @@ function generateCalendar(containerId, year, month, type, titleId=null) {
     const hasEvent = events[dateKey];
 
     if(type === 'detailed') {
+      let classes ='';
+      if(hasEvent){
+        classes = `has-event ${hasEvent.tipo}`;
+      }
       html += `<td ${hasEvent ? `onclick="showEvent('${dateKey}')"` : ''}><span class="${hasEvent ? 'has-event' : ''}">${day}</span></td>`;
     } else if(type === 'summary') {
       html += `<td><span class="${hasEvent ? 'event-dot' : ''}">${day}</span></td>`;
@@ -75,6 +85,11 @@ function generateCalendar(containerId, year, month, type, titleId=null) {
 function showEvent(dateKey) {
   const event = events[dateKey];
   const container = document.getElementById('event-info');
+  const tipoLabels = {
+  'calendar-letivo': 'Calendário letivo',
+  'avaliacao-test': 'Avaliação/atividade',
+  'evento-escolar': 'Evento escolar'
+  };
 
   if (!event) {
     container.innerHTML = `<strong>Nenhum evento para essa data.</strong>`;
@@ -87,22 +102,23 @@ function showEvent(dateKey) {
 
     let proximidade = '';
     if (diffDias === 0) {
-      proximidade = '⚠️ É hoje!';
+      proximidade = '<span id="check"class="material">alarm</span> É hoje!';
     } else if (diffDias === 1) {
-      proximidade = '⏳ Faltam 1 dia';
+      proximidade = '<span id="check"class="material">alarm_on</span> Faltam 1 dia';
     } else if (diffDias > 1 && diffDias <= 7) {
-      proximidade = `⏳ Faltam ${diffDias} dias`;
+      proximidade = `<span id="check"class="material">alarm_on</span> Faltam ${diffDias} dias`;
     } else if (diffDias > 7) {
-      proximidade = `📅 Ainda faltam ${diffDias} dias`;
+      proximidade = `<span id="check"class="material">calendar_month</span> Ainda faltam ${diffDias} dias`;
     } else {
-      proximidade = '✅ Evento já passou';
+      proximidade = '<span id="check"class="material">check</span> Evento já passou';
     }
+  
 
     container.innerHTML = `
       <h3>Detalhes do Evento</h3>
-      <p><strong>Tipo:</strong> ${event.tipo}</p>
-      <p><strong>Data:</strong> ${new Date(dateKey).toLocaleDateString()}</p>
-      <p><strong>Status:</strong> ${proximidade}</p>
+      <p class="text"><strong class="title-info">Tipo:  </strong> ${tipoLabels[event.tipo] || event.tipo}</p>
+      <p class="text"><strong class="title-info">Data:  </strong> ${new Date(dateKey).toLocaleDateString()}</p>
+      <p class="text"><strong class="title-info">Status:  </strong> ${proximidade}</p>
     `;
   }
 
