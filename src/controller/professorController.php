@@ -38,6 +38,13 @@
         return $this->service->update($data);
     }
 
+    /**
+     * @param int $id
+     * @return bool
+     */
+    public function delete(int $id): bool {
+        return $this->service->delete($id);
+    }
 
     }
 ?>

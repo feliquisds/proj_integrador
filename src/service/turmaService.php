@@ -47,6 +47,14 @@
             );
         }
 
+        /**
+         * @param int $id
+         * @return bool
+         */
+        public function delete(int $id): bool
+        {
+            return $this->repo->delete($id);
+        }
 
     }
 ?>

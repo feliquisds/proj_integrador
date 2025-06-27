@@ -121,5 +121,18 @@
             $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
+
+        /**
+         * @param int $id
+         * @return bool
+         */
+        public function delete(int $id): bool
+        {
+            $sql  = "DELETE FROM alunos WHERE ID = :id";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            return $stmt->execute();
+        }
+
     }
 ?>

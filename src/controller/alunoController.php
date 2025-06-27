@@ -24,5 +24,15 @@
         public function find($id) {
             return json_encode($this->service->find($id));
         }
+
+        /**
+         * @param int $id
+         * @return bool
+         */
+        public function delete(int $id): bool {
+            return $this->service->delete($id);
+        }
+
+
     }
 ?>

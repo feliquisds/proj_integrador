@@ -17,6 +17,10 @@
                 // redireciona para limpar POST/mostra lista
                 header('Location: pagina_alunos.php');
                 exit;
+            case 'delete':
+                $controller->delete((int) $_POST['id']);
+                header('Location: pagina_alunos.php');
+                exit;
             default:
                 // salva novo registro
                 $controller->save();
@@ -99,6 +103,7 @@
                 </div>
                 <div class="grid polar-grid">
                     <button type="submit">Atualizar</button>
+                    <button type="submit"name="action"value="delete"onclick="return confirm('Confirma exclusão deste aluno?')"style="background:#e74c3c; color:white;">Excluir</button>
                     <button type="button" onclick="cancelUpdate()">Cancelar</button>
                 </div>
             </form>
@@ -138,6 +143,7 @@
                     <th>Nome</th>
                     <th>Sobrenome</th>
                     <th>CPF</th>
+                    
                 </tr>
             </thead>
             <tbody>
@@ -148,7 +154,8 @@
                         <td><?= htmlspecialchars($aluno['Nome']) ?></td>
                         <td><?= htmlspecialchars($aluno['Sobrenome']) ?></td>
                         <td><?= htmlspecialchars($aluno['CPF']) ?></td>
-                    
+                        
+
                     </tr>
                 <?php endforeach; ?>
             </tbody>

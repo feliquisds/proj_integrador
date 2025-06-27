@@ -8,26 +8,31 @@
 
       if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           switch ($_POST['action'] ?? '') {
-              case 'find':
-                  // 1) busca pelo ID e carrega em $found
-                  $tmp   = json_decode(
-                      $controller->find((int) $_POST['id']),
-                      true
-                  );
-                  $found = $tmp[0] ?? null;
-                  break;
+            case 'find':
+                // 1) busca pelo ID e carrega em $found
+                $tmp   = json_decode(
+                    $controller->find((int) $_POST['id']),
+                    true
+                );
+                $found = $tmp[0] ?? null;
+                break;
 
-              case 'update':
-                  // 2) atualiza e volta à lista
-                  $controller->update($_POST);
-                  header('Location: pagina_professores.php');
-                  exit;
+            case 'update':
+                // 2) atualiza e volta à lista
+                $controller->update($_POST);
+                header('Location: pagina_professores.php');
+                exit;
 
-              default:
-                  // 3) salva novo professor
-                  $controller->save($_POST);
-                  header('Location: pagina_professores.php');
-                  exit;
+            case 'delete':
+                $controller->delete((int) $_POST['id']);
+                header('Location: pagina_professores.php');
+                exit;
+
+            default:
+                // 3) salva novo professor
+                $controller->save($_POST);
+                header('Location: pagina_professores.php');
+                exit;
           }
       }
  
@@ -79,6 +84,7 @@
 
             <div>
               <button type="submit">Atualizar</button>
+              <button type="submit"name="action"value="delete"onclick="return confirm('Confirma exclusão deste aluno?')"style="background:#e74c3c; color:white;">Excluir</button>
               <button type="button" onclick="cancelUpdate()">Cancelar</button>
             </div>
           </form>

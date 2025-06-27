@@ -112,6 +112,14 @@
             return $stmt->execute();
         }
 
+        public function delete(int $id): bool
+        {
+            $sql  = "DELETE FROM professores WHERE ID = :id";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            return $stmt->execute();
+        }
+
 
     }
 ?>

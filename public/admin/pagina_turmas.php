@@ -22,7 +22,12 @@ error_reporting(E_ALL);
                 $controller->update($_POST);
                 header('Location: pagina_turmas.php');
                 exit;
-
+            
+            case 'delete':
+                $controller->delete((int) $_POST['id']);
+                header('Location: pagina_turmas.php');
+                exit;    
+            
             default:
                 // cria nova turma
                 $controller->save($_POST);
@@ -116,6 +121,7 @@ error_reporting(E_ALL);
 
                 <div class="form-actions">
                 <button type="submit">Atualizar</button>
+                <button type="submit"name="action"value="delete"onclick="return confirm('Confirma exclusão deste aluno?')"style="background:#e74c3c; color:white;">Excluir</button>
                 <button type="button" onclick="cancelUpdate()">Cancelar</button>
                 </div>
             </form>
