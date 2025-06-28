@@ -4,8 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Config</title>
+   
     <link rel="stylesheet" href="../assets/css/overrides/dashboard.css">
-    <script src="../assets/js/config.js"></script>
+
+     <script src="../assets/js/config.js"></script>
+
+     <style>
+        
+        .grid-1x {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        h1 {
+            margin: 0 0 170px 0;
+        }
+        .card {
+            
+            width: 100%;
+            max-width: 400px; 
+            margin: 10px 0;
+            align-self: center;
+        }
+  
+        .button-container {
+            width: 100%;
+            max-width: 400px;
+            align-self: center;
+            margin-top: 20px;
+        }
+   
+        button {
+            width: 100%;
+            padding: 10px; 
+            cursor: pointer;
+        }
+     </style>
 </head>
 <body>
     <div class="grid grid-1x">
@@ -18,7 +52,8 @@
                 <option value="dark">Escuro</option>
             </select>
         </div>
-        <div>
+        <!-- Container dedicado para o botão -->
+        <div class="button-container">
             <button onclick="signOut()">Sair</button>
         </div>
     </div>

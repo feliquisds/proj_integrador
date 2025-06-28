@@ -52,6 +52,16 @@
         public function find($id) {
             return $this->repo->find($id);
         }
-            
+           
+        /**
+         * @param int $id
+         * @return bool
+         */
+        public function delete(int $id): bool
+        {
+            return $this->repo->delete($id);
+        }
+
+
     }
 ?>

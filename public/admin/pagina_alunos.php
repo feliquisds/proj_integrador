@@ -2,11 +2,38 @@
     require_once '../../vendor/autoload.php';
     use src\controller\alunoController;
     $controller = new alunoController();
-    $alunos = json_decode($controller->list(), true);
 
+    $found = null;
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $controller->save();
+        switch ($_POST['action'] ?? '') {
+            case 'find':
+                // busca pelo ID informado
+                $tmp = json_decode($controller->find($_POST['id']), true);
+                $found = $tmp[0] ?? null;
+                break;
+            case 'update':
+                // grava as alterações
+                $controller->update();
+                // redireciona para limpar POST/mostra lista
+                header('Location: pagina_alunos.php');
+                exit;
+            case 'delete':
+                $controller->delete((int) $_POST['id']);
+                header('Location: pagina_alunos.php');
+                exit;
+            default:
+                // salva novo registro
+                $controller->save();
+                header('Location: pagina_alunos.php');
+                exit;
+        }
     }
+    
+    // carrega lista atualizada
+    $alunos = json_decode($controller->list(), true);
+?>
+
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -27,8 +54,60 @@
         <div class="grid polar-grid">
             <h2>Lista de alunos</h2>
             <button class="button" onclick="showForm()" id="formbutton">Novo aluno</button>
+            <button class="button" onclick="showEditForm()" id="editbutton">Editar aluno</button>
         </div>
 
+
+
+        <form method="POST" id="editForm" style="display:none;">
+            <input type="hidden" name="action" value="find">
+            <div class="grid button-grid">
+                <input type="number" name="id" placeholder="Digite o ID do aluno" required>
+            </div>
+            <div class="grid polar-grid">
+                <button type="submit">Buscar</button>
+                <button type="button" onclick="hideEditForm()">Cancelar</button>
+            </div>
+        </form>
+
+        <?php if ($found): ?>
+            <form method="POST" id="updateForm" class="subcard grid grid-1x">
+                <input type="hidden" name="action" value="update">
+                <input type="hidden" name="id" value="<?= htmlspecialchars($found['ID']) ?>">
+
+                <div class="grid button-grid">
+                    <label for="nome">Matrícula</label>
+                    <input type="text" name="matricula"      value="<?= htmlspecialchars($found['Matricula']) ?>" required>
+                    <label for="nome">Nome</label>
+                    <input type="text" name="nome"           value="<?= htmlspecialchars($found['Nome']) ?>" required>
+                    <label for="nome">Sobrenome</label>
+                    <input type="text" name="sobrenome"      value="<?= htmlspecialchars($found['Sobrenome']) ?>" required>
+                    <label for="nome">CPF</label>
+                    <input type="text" name="cpf"            value="<?= htmlspecialchars($found['CPF']) ?>" required>
+                </div>
+                <div class="grid button-grid">
+                    <label for="nome">Data de nascimento</label>
+                    <input type="date"   name="data_nascimento"     value="<?= htmlspecialchars($found['DataNascimento']) ?>" required>
+                    <label for="nome">Contato responsável</label>
+                    <input type="text"   name="contato_responsavel" value="<?= htmlspecialchars($found['ContatoResponsavel']) ?>" required>
+                    <label for="nome">Endereço</label>
+                    <input type="text"   name="endereco"            value="<?= htmlspecialchars($found['Endereco']) ?>" required>
+                    <label for="nome">Email responsável</label>
+                    <input type="email"  name="email_responsavel"   value="<?= htmlspecialchars($found['EmailResponsavel']) ?>" required>
+                </div>
+                <div class="grid button-grid">
+                    <label for="nome">Tipo sanguíneo</label>
+                    <input type="text"   name="tipo_sanguineo" value="<?= htmlspecialchars($found['TipoSanguineo']) ?>" required>
+                    <label for="nome">ID da turma</label>
+                    <input type="number" name="id_turma"        value="<?= htmlspecialchars($found['ID_Turma']) ?>" required>
+                </div>
+                <div class="grid polar-grid">
+                    <button type="submit">Atualizar</button>
+                    <button type="submit"name="action"value="delete"onclick="return confirm('Confirma exclusão deste aluno?')"style="background:#e74c3c; color:white;">Excluir</button>
+                    <button type="button" onclick="cancelUpdate()">Cancelar</button>
+                </div>
+            </form>
+        <?php endif; ?>
 
 
         <form action="" method="POST" class="subcard grid grid-1x" id="new" style="display: none;">
@@ -64,7 +143,7 @@
                     <th>Nome</th>
                     <th>Sobrenome</th>
                     <th>CPF</th>
-                    <th>Ações</th>
+                    
                 </tr>
             </thead>
             <tbody>
@@ -75,7 +154,8 @@
                         <td><?= htmlspecialchars($aluno['Nome']) ?></td>
                         <td><?= htmlspecialchars($aluno['Sobrenome']) ?></td>
                         <td><?= htmlspecialchars($aluno['CPF']) ?></td>
-                        <td><a href="#">Editar</a></td>
+                        
+
                     </tr>
                 <?php endforeach; ?>
             </tbody>
@@ -91,5 +171,28 @@
             }
         }
     </script>
+
+    <script>
+        function showEditForm() {
+            const f = document.getElementById('editForm');
+            f.style.display = 'grid';  // ou 'block' dependendo do seu CSS de grid
+        }
+        function hideEditForm() {
+            const f = document.getElementById('editForm');
+            f.style.display = 'none';
+        }
+
+        function cancelUpdate() {
+            document.getElementById('updateForm').style.display = 'none';
+            hideEditForm();
+        }
+  // Se quiser exibir automaticamente ao achar:
+        <?php if ($found): ?>
+            echo "<script>document.getElementById('updateForm').style.display='grid';</script>";
+        <?php endif; ?>
+</script>
+
+    
+
 </body>
 </html>

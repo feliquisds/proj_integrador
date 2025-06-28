@@ -24,5 +24,37 @@
             $this->repo->save($turma);
         }
 
+        /**
+         * @param int $id
+         * @return array dados da turma
+         */
+        public function find(int $id): array
+        {
+            return $this->repo->findById($id);
+        }
+
+        /**
+         * @param array $data ($_POST)
+         * @return bool
+         */
+        public function update(array $data): bool
+        {
+            return $this->repo->update(
+                (int) $data['id'],
+                (int) $data['num_turma'],
+                $data['letra_turma'],
+                $data['ano_letivo']
+            );
+        }
+
+        /**
+         * @param int $id
+         * @return bool
+         */
+        public function delete(int $id): bool
+        {
+            return $this->repo->delete($id);
+        }
+
     }
 ?>

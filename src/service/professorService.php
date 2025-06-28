@@ -28,5 +28,40 @@
             $this->repo->save($professor);
         }
 
+        /**
+         * @param int $id
+         * @return array dados do professor
+         */
+        public function find(int $id): array
+        {
+            return $this->repo->findById($id);
+        }
+
+        /**
+         * @param array $data ($_POST)
+         * @return bool
+         */
+        public function update(array $data): bool
+        {
+            return $this->repo->update(
+                (int)    $data['id'],
+                $data['nome'],
+                $data['sobrenome'],
+                $data['data_nascimento'],
+                $data['cpf'],
+                $data['contato'],
+                $data['email']
+            );
+        }
+
+        /**
+         * @param int $id
+         * @return bool
+         */
+        public function delete(int $id): bool
+        {
+            return $this->repo->delete($id);
+        }
+
     }
 ?>

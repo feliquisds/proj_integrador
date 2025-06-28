@@ -9,3 +9,9 @@ canvas {
     width: 100% !important;
     height: 275px !important;
 }
+
+label{
+    font-size: 18px;
+}
+
+

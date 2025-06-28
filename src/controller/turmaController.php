@@ -17,6 +17,33 @@
             return json_encode($this->service->save($_POST), true);
         }
 
+        /**
+         * Busca uma turma por ID e retorna JSON
+         * @param int $id
+         * @return string
+         */
+        public function find(int $id): string
+        {
+            return json_encode($this->service->find($id));
+        }
+
+        /**
+         * Atualiza uma turma existente
+         * @param array $data ($_POST)
+         * @return bool
+         */
+        public function update(array $data): bool
+        {
+            return $this->service->update($data);
+        }
+
+        /**
+         * @param int $id
+         * @return bool
+         */
+        public function delete(int $id): bool {
+            return $this->service->delete($id);
+        }
 
     }
 ?>
