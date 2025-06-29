@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/overrides/agenda.css">
+    
+    <title>Agenda de atividades</title>
+</head>
+<body>
+    <div class="grid grid-1x">
+        <h1>Bom dia, NOME</h1>
+
+        <div class="button-grid">
+            <button onclick="toggleForm()">+ Novo Evento</button>
+        </div>
+        
+
+        <div class="add-event-form" id="event-form">
+            <h3>Adicionar Evento</h3>
+            <label>Data: <input type="date" id="event-date"></label>
+            <label for="type">Tipo de evento:</label>
+            <select name="Tipo-evento" id="tipo-evento">
+                <option value="" disabled selected hidden>Selecione</option>
+                <option  value="has-event calendar-letivo">Calendário letivo</option>
+                <option  value="avaliacao-test">Avaliação/atividade</option>
+                <option  value="evento-escolar">Evento escolar</option>
+            </select>
+            <label>Descrição: <input type="text" class="event-desc" id="event-desc" placeholder="Ex: Reunião às 10h"></label>
+            <button onclick="addEvent()">Adicionar</button>
+        </div>
+
+
+        <div class="grid grid-2x-2-1">
+
+                <div class="grid grid-1x-10px card">
+                    <div class="grid button-grid">
+                        <button class="previous-button"onclick="changeMonth(-1)"><span class="material">arrow_back_ios</span></button>
+                        <h2>Calendário</h2>
+                        <h5 id="detailed-title"></h5>   
+                        <button class="next-button" onclick="changeMonth(1)"><span class="material">arrow_back_ios</span></button>
+                    </div>
+                    <div class="calendar" id="calendar-detailed">Carregando...</div>
+                    <div id="event-info" style="display: none;"></div>
+                </div>
+
+
+                
+                <div class="grid grid-1x-10px card">
+                    <div class="grid button-grid">
+                        <h2>Calendário</h2>
+                        <h5 id="summary-title"></h5>
+                    </div>
+                    <div class="calendar" id="calendar-summary">Carregando...</div>
+                </div>
+
+                
+
+                <div class="grid grid-1x-10px card">
+                    <h2>Eventos</h2>
+                    <div class="grid grid-1x-10px">
+                        <div class="subcard">Passeio ao ar livre</div>
+                        <div class="subcard">Tech Rock</div>
+                        <div class="subcard">Excursão</div>
+                    </div>
+                </div>
+        </div>
+
+    </div>
+    <script src="../assets/js/agenda.js"></script>
+</body>
+</html>
