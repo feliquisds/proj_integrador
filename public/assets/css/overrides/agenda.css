@@ -1,0 +1,157 @@
+@import url(../global.css);
+
+#event-form{
+    display: none;
+    padding: 1rem;
+    flex-direction: column;
+}
+h3{
+    text-align: center;
+}
+input, label, button{
+    margin-top: 0.3rem;
+}
+input, label{
+    display:block;
+    width: 100%;
+    font-size: 14px;
+    color: var(--input-focused);
+}
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  border: 1px solid #444;
+  padding: 10px;
+  text-align: center;
+  justify-items: center;
+  z-index: 2;
+}
+
+.has-event {
+  width: 100%;
+  display: block;
+  background-color: #2e8b57;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.event-dot {
+  width: 2rem;
+  height: 2rem;
+  line-height: 2rem;
+  display: block;
+  background-color: rgba(255, 0, 0, 0.152);
+  border-radius: 50%;
+}
+
+#event-form {
+  margin-top: 20px;
+}
+    
+select {
+  background-color: transparent;
+  padding: 10px 40px 10px 10px; /* padding right extra para a seta */
+  border-radius: 100px;
+  border: 3px solid var(--input-unfocused);
+  color: var(--input-focused);
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%234CAF50" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 20px;
+  cursor: pointer;
+  width: 100%;
+}
+select:hover {
+  background-color: var(--common-hover);
+}
+select:focus {
+  background-color: transparent;
+  border: 3px solid var(--input-focused);
+}
+
+ select option:first-child {
+      color: var(--button);
+ }
+
+#event-info {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: var(--background);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  font-family: Arial, sans-serif;
+}
+.select-option{
+  background-color: var(--background) ;
+}
+.previous-button{
+  background: none;
+  color: var(--button);
+  width: 0.3rem;
+}
+.previous-button:hover {
+    background: none;
+    color: #2e8b57;
+}
+
+.previous-button:focus {
+    background: none;
+}
+.next-button{
+  transform: scaleX(-1);
+  background: none;
+  color: var(--button);
+}
+.next-button:hover {
+    background: none;
+    color: #2e8b57;
+}
+
+.next-button:focus {
+    background: none;
+}
+
+button:focus > span, .button:focus > span {
+    animation: fill 0.25s;
+    font-variation-settings: 'FILL' 1;
+}
+
+#check{
+  font-size: 1.2rem;
+  vertical-align: middle;
+  color: var(--active-background);
+}
+
+.text{
+  margin-bottom: 0.2rem;
+  font-weight: 100;
+}
+strong.title-info{
+  font-weight: 700;
+  letter-spacing: 0.05rem;
+}
+
+.has-event.calendar-letivo{
+   background-color: #F61161;
+   color: var(--button-text);
+}
+.has-event.avaliacao-test{
+  background-color: #CC11F6;
+}
+.has-event.evento-escolar{
+  background-color: #F67411;
+}
