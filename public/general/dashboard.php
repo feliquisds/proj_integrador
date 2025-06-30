@@ -11,12 +11,12 @@ $tipo = $_SESSION['usuario']['tipo'];
 
 // Define os arquivos de acordo com o tipo
 if ($tipo == "Professor") {
-    $sidebar = "../professor/sidebar-prof.html";
-    $relatorio = "../professor/relatorios.html";
+    $sidebar = "../professor/sidebar-prof.php";
+    $relatorio = "../professor/relatorios.php";
 } 
 
 elseif ($tipo == "Administrador") {
-    $sidebar = "../admin/sidebar-admin.html";
+    $sidebar = "../admin/sidebar-admin.php";
     $relatorio = "../admin/gestaoAcademica.php";
 } 
 

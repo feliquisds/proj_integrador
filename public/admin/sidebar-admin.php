@@ -1,3 +1,16 @@
+<?php
+
+session_start();
+
+if (!isset($_SESSION['usuario']) || !isset($_SESSION['usuario']['tipo'])) {
+    header("Location: ../index.html");
+    exit();
+}
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +26,7 @@
         <div class="grid grid-1x">
             <img src="../assets/media/diplomado.png" style="width: 120px; height: auto;">
             <div class="grid grid-1x-10px">
-                <a href="../professor/relatorios.html" target="frame"
+                <a href="../professor/relatorios.php" target="frame"
                     class="button secondary-button button-left-aligned">
                     <span class="material">dashboard</span>Documentos e Relátorios
                 </a>

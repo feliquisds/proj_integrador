@@ -2,6 +2,15 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+
+    session_start();
+
+    if (!isset($_SESSION['usuario']) || !isset($_SESSION['usuario']['tipo'])) {
+        header("Location: ../index.html");
+        exit();
+}
+
+
     require_once '../../vendor/autoload.php';
     use src\controller\turmaController;
     $controller = new turmaController();

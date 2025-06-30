@@ -1,3 +1,19 @@
+<?php
+
+session_start();
+
+if (!isset($_SESSION['usuario']) || !isset($_SESSION['usuario']['tipo'])) {
+    header("Location: ../index.html");
+    exit();
+}
+
+
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
