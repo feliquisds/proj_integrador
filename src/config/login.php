@@ -26,10 +26,11 @@
                                      "senha" => $info['Senha'],
                                      "tipo" => $info['Tipo'],
                                      "id_prof" => $info['ID_Professor']);
-        header("Location: ../../public/general/dashboard.html");
+        header("Location: ../../public/general/dashboard.php");
     }
     else
     {
         header("Location: ../../public/index.html");
+        echo 'senha incorreta';
     }
 ?>
