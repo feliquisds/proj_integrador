@@ -1,4 +1,9 @@
 <?php
+
+    session_start();
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
     require_once '../../vendor/autoload.php';
     use src\controller\alunoController;
     $controller = new alunoController();
@@ -34,7 +39,7 @@
 ?>
 
 
-?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -186,10 +191,9 @@
             document.getElementById('updateForm').style.display = 'none';
             hideEditForm();
         }
-  // Se quiser exibir automaticamente ao achar:
-        <?php if ($found): ?>
-            echo "<script>document.getElementById('updateForm').style.display='grid';</script>";
-        <?php endif; ?>
+        // <?php if ($found): ?>
+        //    echo '<script> document.getElementById("updateForm").style.display = "grid";</script>'
+        // <?php endif; ?>
 </script>
 
     

@@ -1,3 +1,21 @@
+<?php
+
+session_start();
+
+if (!isset($_SESSION['usuario']) || !isset($_SESSION['usuario']['tipo'])) {
+    header("Location: ../index.html");
+    exit();
+}
+
+$user_id = $_SESSION['usuario']['id_prof'];
+
+
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +30,10 @@
 
 <body>
     <div class="grid grid-1x">
-        <h1>Bom dia, NOME</h1>
+        <h1>
+            Bom dia, 
+            <?php echo $user_id; ?> 
+        </h1>
         <div class="grid grid-2x-2-1">
             <div class="grid grid-1x-10px card">
                 <h2>Notas</h2>
